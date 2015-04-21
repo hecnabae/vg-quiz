@@ -6,7 +6,7 @@ angular.module('videogularApp', [
 			"com.2fdevs.videogular.plugins.overlayplay",
 			"com.2fdevs.videogular.plugins.poster"
 		])
-	.controller('videogularCtrl', ["$sce", function ($sce) {
+	.controller('VideogularCtrl', ["$sce", function ($sce) {
 		var controller = this;
 
 		controller.config = {
