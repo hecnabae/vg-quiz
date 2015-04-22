@@ -6,43 +6,90 @@ angular.module('videogularApp', [
 			"com.2fdevs.videogular.plugins.overlayplay",
 			"com.2fdevs.videogular.plugins.poster"
 		])
-	.controller('VideogularCtrl', ["$sce", function ($sce) {
-		var controller = this;
+	.controller('VideogularCtrl', ["$scope", function ($scope) {
+		this.API = null;
 
-		controller.config = {
-			preload: "none",
-			sources: [
-				{
-					src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.mp4"),
-					type: "video/mp4"
+		this.onPlayerReady = function onPlayerReady(API) {
+			this.API = API;
+		}
+
+		this.init = function init() {
+			// TODO: Preparar inicialización
+			var quizCollection = [];
+			var quiz = {};
+			quiz.timeLapse = {
+				start: 10,
+				end: 10
+			};
+			quiz.onLeave = this.onLeave.bind(this);
+			quiz.onUpdate = this.onUpdate.bind(this);
+			quiz.onComplete = this.onComplete.bind(this);
+
+			quizCollection.push(quiz);
+
+
+
+			this.config = {
+				preload: "none",
+				sources: [
+					{
+						src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.mp4"),
+						type: "video/mp4"
 				},
-				{
-					src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"),
-					type: "video/webm"
+					{
+						src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"),
+						type: "video/webm"
 				},
-				{
-					src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"),
-					type: "video/ogg"
+					{
+						src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"),
+						type: "video/ogg"
 				}
 				],
-			theme: "http://www.videogular.com/styles/themes/default/latest/videogular.css",
-			plugins: {
-				poster: "http://www.videogular.com/assets/images/videogular.png"
-			}
-		};
-		}])
-	.directive("vgQuizPlugin", [function () {
-			return {
-				restrict: "E",
-				require: "^videogular",
-				template: "<div ng-show=\"API.isCompleted && API.currentState == 'stop'\"><span ng-click=\"onClickReplay()\">REPLAY!</span></div>",
-				link: function (scope, elem, attrs, API) {
-					scope.API = API;
-
-					scope.onClickReplay = function () {
-						API.play();
-					};
+				cuePoints: {
+					quizCollection: quizCollection
+				},
+				theme: "http://www.videogular.com/styles/themes/default/latest/videogular.css",
+				plugins: {
+					poster: "http://www.videogular.com/assets/images/videogular.png"
 				}
-			}
-		}
-	]);
+			};
+
+			this.onLeave = function onLeave(currentTime, timeLapse, params) {
+
+			};
+
+			this.onComplete = function onComplete(currentTime, timeLapse, params) {
+				// TODO: Este evento en realidad no tiene mucha funcionalidad
+			};
+
+			this.onUpdate = function onUpdate(currentTime, timeLapse, params) {
+				API.pause();
+				// TODO: Mostrar quizz
+
+			};
+
+			this.init();
+		};
+
+
+
+		}]);
+//	.directive("vgQuizPlugin", [function () {
+//			return {
+//				restrict: "E",
+//				require: "^videogular",
+//				template: "<div ng-show=\"API.isCompleted && API.currentState == 'stop'\"><span ng-click=\"onClickReplay()\">REPLAY!</span></div>",
+//				link: function (scope, elem, attrs, API) {
+//					scope.API = API;
+//
+//
+//
+//					scope.onClickReplay = function () {
+//						API.play();
+//					};
+//
+//
+//				}
+//			}
+//		}
+//	]);
