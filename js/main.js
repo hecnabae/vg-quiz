@@ -70,22 +70,22 @@ angular.module("videogularApp", [
 
 
 		}]);
-//angular.module("videogularApp")
-//    .directive("vgQuizPlugin",
-//        function vgQuizPlugin() {
-//            return {
-//				restrict: "E",
-//				require: "^videogular",
-//				controller: "VideogularCtrl",
-//				controllerAs: "ctrl",
-//				template: "<div ng-show=\"API.isCompleted && API.currentState == 'stop'\"><span ng-click=\"onClickReplay()\">REPLAY!</span></div>",
-//				link: function link(scope, elem, attrs, ctrl) {
-//					//ctrl.tweetElements = elem[0].getElementsByTagName("vg-tweet");
-//					ctrl.quizElements = elem[0].getElementsByTagName("vq-quiz-plugin");
-//				}
-//            };
-//        }
-//    );
+angular.module("videogularApp")
+	.directive("vgQuizPlugin",
+		function vgQuizPlugin() {
+			return {
+				restrict: "E",
+				require: "^videogular",
+				controller: "VideogularCtrl",
+				controllerAs: "ctrl",
+				template: "<div ng-show=\"API.isCompleted && API.currentState == 'stop'\"><span ng-click=\"onClickReplay()\">REPLAY!</span></div>",
+				link: function link(scope, elem, attrs, ctrl) {
+					//ctrl.tweetElements = elem[0].getElementsByTagName("vg-tweet");
+					ctrl.quizElements = elem[0].getElementsByTagName("vq-quiz-plugin");
+				}
+			};
+		}
+	);
 
 
 
