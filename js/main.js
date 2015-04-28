@@ -7,10 +7,10 @@ angular.module("videogularApp", [
 			"com.2fdevs.videogular.plugins.poster"
 		])
 	.controller("VideogularCtrl", ["$scope", "$sce", function ($scope, $sce) {
-		this.API = null;
+		$scope.API = null;
 
-		this.onPlayerReady = function onPlayerReady(API) {
-			this.API = API;
+		this.onPlayerReady = function (API) {
+			$scope.API = API;
 		}
 
 		this.init = function init() {
@@ -58,12 +58,13 @@ angular.module("videogularApp", [
 		};
 
 		this.onComplete = function onComplete(currentTime, timeLapse, params) {
-			// TODO: Este evento en realidad no tiene mucha funcionalidad
-			API.pause();
+			// TODO: Lanza excepción
+			$scope.API.pause();
 		};
 
 		this.onUpdate = function onUpdate(currentTime, timeLapse, params) {
-			API.pause();
+			$scope.API.pause();
+			// TODO: Lanza excepción
 			// TODO: Mostrar quizz
 
 		};

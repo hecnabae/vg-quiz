@@ -5,7 +5,7 @@
 <body>
 	<div ng-app="videogularApp">
 		<div ng-controller="VideogularCtrl as controller" class="videogular-container">
-			<videogular vg-theme="controller.config.theme" vg-cue-points="controller.config.cuePoints">
+			<videogular vg-theme="controller.config.theme" vg-player-ready="controller.onPlayerReady($API)" vg-cue-points="controller.config.cuePoints">
 				<vg-media vg-src="controller.config.sources" vg-tracks="controller.config.tracks">
 				</vg-media>
 
