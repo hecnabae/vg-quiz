@@ -27,6 +27,7 @@ angular.module("videogularApp", [
 
 			quizCollection.push(quiz);
 
+			//TODO: Ver el ejemplo de Twitter. Ver https://github.com/2fdevs/videogular/blob/master/app/views/cue-points.html . Si nos fijamos en el ejemplo, definen la colección cuePoints en ctrl.config.cuePoints
 			this.config = {
 				preload: "none",
 				sources: [
