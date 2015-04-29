@@ -58,13 +58,13 @@ angular.module("videogularApp", [
 		};
 
 		this.onComplete = function onComplete(currentTime, timeLapse, params) {
-			// TODO: Lanza excepción
+
 			$scope.API.pause();
 		};
 
 		this.onUpdate = function onUpdate(currentTime, timeLapse, params) {
 			$scope.API.pause();
-			// TODO: Lanza excepción
+
 			// TODO: Mostrar quizz
 
 		};
