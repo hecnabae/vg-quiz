@@ -19,8 +19,12 @@ angular.module("videogularApp", [
 			var quiz = {};
 			quiz.timeLapse = {
 				start: 10,
-				end: 15
+				end: 10
 			};
+			// Inicialización de params
+			quiz.params = {};
+			quiz.params.index = 1;
+
 			quiz.onLeave = this.onLeave.bind(this);
 			quiz.onUpdate = this.onUpdate.bind(this);
 			quiz.onComplete = this.onComplete.bind(this);
@@ -58,7 +62,7 @@ angular.module("videogularApp", [
 		};
 
 		this.onComplete = function onComplete(currentTime, timeLapse, params) {
-
+			//$scope.ctrl.config.cuePoints.quizCollection.
 			$scope.API.pause();
 		};
 
