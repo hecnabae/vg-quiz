@@ -72,6 +72,11 @@ angular.module("videogularApp", [
 
 
 		}]);
+
+//TODO: Ver cómo está desarrollado poster-plugin para crear una capa superpuesta.
+// TODO: OVERLAY - http://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
+//http://www.videogular.com/examples/poster-plugin/
+//http://www.videogular.com/tutorials/videogular-api/
 angular.module("videogularApp")
 	.directive("vgQuizPlugin",
 		function vgQuizPlugin() {
@@ -80,7 +85,7 @@ angular.module("videogularApp")
 				require: "^videogular",
 				controller: "VideogularCtrl",
 				controllerAs: "ctrl",
-				template: "<div ng-show=\"API.isCompleted && API.currentState == 'stop'\"><span ng-click=\"onClickReplay()\">REPLAY!</span></div>",
+				template: "<div ng-show=\"API.currentState == 'pause'\"><span ng-click=\"onClickReplay()\">REPLAY!</span></div>",
 				link: function link(scope, elem, attrs, ctrl) {
 					//ctrl.tweetElements = elem[0].getElementsByTagName("vg-tweet");
 					ctrl.quizElements = elem[0].getElementsByTagName("vq-quiz-plugin");
