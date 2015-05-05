@@ -1,0 +1,39 @@
+[
+	{
+		id: 1,
+		question: '¿De qué color es el caballo blanco de Santiago?',
+		answers: [
+			{
+				id: 1,
+				text: 'Azul'
+					},
+			{
+				id: 2,
+				text: 'Rojo'
+					},
+			{
+				id: 3,
+				text: 'Blanco',
+				isCorrect: true
+					}
+		]
+	},
+	{
+		id: 2,
+		question: '¿Quien fue elegido Presidente de España en el año 2011?',
+		answers: [
+			{
+				id: 1,
+				text: 'Mariano Rajoy'
+			},
+			{
+				id: 2,
+				text: 'Zapatero'
+			},
+			{
+				id: 3,
+				text: 'Pablo Iglesias'
+			}
+		]
+	}
+]
