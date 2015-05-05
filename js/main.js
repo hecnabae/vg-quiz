@@ -8,6 +8,7 @@ angular.module("videogularApp", [
 		])
 	.controller("VideogularCtrl", ["$scope", "$sce", function ($scope, $sce) {
 		$scope.API = null;
+		$scope.currentQuizParams = {};
 
 		this.onPlayerReady = function (API) {
 			$scope.API = API;
@@ -17,13 +18,37 @@ angular.module("videogularApp", [
 			// TODO: Preparar inicialización
 			var quizCollection = [];
 			var quiz = {};
-			quiz.timeLapse = {
-				start: 10,
-				end: 10
+
+			// 5. Cargar punto temporal de pausa
+			quiz = {
+				timeLapse: {
+					start: 10,
+					end: 10
+				},
+				params: {
+					index: 1,
+					id: 1,
+					question: '¿De qué color es el caballo blanco de Santiago?',
+					answers: [
+						{
+							id: 1,
+							text: 'Azul'
+					},
+						{
+							id: 2,
+							text: 'Rojo'
+					},
+						{
+							id: 3,
+							text: 'Blanco',
+							isCorrect: true
+					}
+			]
+				}
 			};
-			// Inicialización de params
-			quiz.params = {};
-			quiz.params.index = 1;
+
+			// 6. Asignar quizParams a quiz.params
+
 
 			quiz.onLeave = this.onLeave.bind(this);
 			quiz.onUpdate = this.onUpdate.bind(this);
@@ -64,6 +89,7 @@ angular.module("videogularApp", [
 		this.onComplete = function onComplete(currentTime, timeLapse, params) {
 			//$scope.ctrl.config.cuePoints.quizCollection.
 			$scope.API.pause();
+			$scope.currentQuizParams = params;
 		};
 
 		this.onUpdate = function onUpdate(currentTime, timeLapse, params) {
@@ -89,7 +115,7 @@ angular.module("videogularApp")
 				require: "^videogular",
 				controller: "VideogularCtrl",
 				controllerAs: "ctrl",
-				template: "<div ng-show=\"API.currentState == 'pause'\"><span ng-click=\"onClickReplay()\">REPLAY!</span></div>",
+				template: "<div ng-show=\"API.currentState == 'pause'\">{{currentQuizParams.question}}<div ng-repeat='pr in currentQuizParams.answers'><input type='checkbox'>{{pr.text}}</input></div><span ng-click=\"onClickReplay()\">REPLAY!</span></div>",
 				link: function link(scope, elem, attrs, ctrl) {
 					//ctrl.tweetElements = elem[0].getElementsByTagName("vg-tweet");
 					ctrl.quizElements = elem[0].getElementsByTagName("vq-quiz-plugin");
