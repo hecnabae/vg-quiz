@@ -1,7 +1,6 @@
-<div ng-show=\ "API.currentState == 'pause'\">
+<div ng-show='API.currentState === "pause"'>
 	{{currentQuizParams.question}}
 	<div ng-repeat='pr in currentQuizParams.answers'>
 		<input type='checkbox'> {{pr.text}} </input>
 	</div>
-	<!--<span ng-click=\ "onClickReplay()\">REPLAY!</span>-->
 </div>
