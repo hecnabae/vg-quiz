@@ -2,8 +2,11 @@ angular.module("videogularApp")
 	.directive("vgQuizWidget",
 		function vgQuizPlugin() {
 			return {
-				restrict: "E",
-				require: "^videogular",
+				scope: {
+					vgConfig: "="
+				},
+				//				restrict: "E",
+				//				require: "^videogular",
 				controller: "vgQuizWidgetController",
 				controllerAs: "controller",
 				templateUrl: "js/directives/vg-quiz-widget/vg-quiz-widget.html",
