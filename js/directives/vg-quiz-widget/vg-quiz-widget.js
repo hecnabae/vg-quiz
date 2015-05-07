@@ -1,14 +1,13 @@
 angular.module("videogularApp")
-	.directive("vgQuizPlugin",
+	.directive("vgQuizWidget",
 		function vgQuizPlugin() {
 			return {
 				restrict: "E",
 				require: "^videogular",
-				controller: "VideogularCtrl",
+				controller: "vgQuizWidgetController",
 				controllerAs: "ctrl",
 				templateUrl: "js/directives/vg-quiz-widget/vg-quiz-widget.html",
 				link: function link(scope, elem, attrs, ctrl) {
-					//ctrl.tweetElements = elem[0].getElementsByTagName("vg-tweet");
 					ctrl.quizElements = elem[0].getElementsByTagName("vq-quiz");
 				}
 			};

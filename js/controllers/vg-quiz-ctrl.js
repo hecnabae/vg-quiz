@@ -1,5 +1,6 @@
 // TODO: Cargador de elementos de la colección Quiz
-angular.module("videogularApp").controller("QuizCtrl", ["tweets", function QuizCtrl(quizCol) {
+angular.module("videogularApp")
+	.controller("QuizCtrl", ["quizCollection", function QuizCtrl(quizCol) {
 	this.config = {
 		sources: [{
 			src: "https://www.youtube.com/watch?v=I7ZUkd44-Co"

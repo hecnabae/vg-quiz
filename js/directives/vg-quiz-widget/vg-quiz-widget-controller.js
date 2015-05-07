@@ -1,6 +1,6 @@
 'use strict';
 angular.module("videogularApp")
-	.controller("VideogularCtrl", ["$scope", "$sce", function ($scope, $sce) {
+	.controller("vgQuizWidgetController", ["$scope", "$sce", function ($scope, $sce) {
 		$scope.API = null;
 		$scope.currentQuizParams = {};
 

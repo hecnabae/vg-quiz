@@ -6,8 +6,8 @@ angular.module("videogularApp").config(
                 controller: 'QuizCtrl',
                 controllerAs: "ctrl",
                 resolve: {
-                    "tweets": ["$http",
-                        function getTweets($http) {
+                    "quizCollection": ["$http",
+                        function getQuizCollection($http) {
                             return $http.get('data/quizCollection.json');
                         }
                     ]
