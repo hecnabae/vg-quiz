@@ -14,34 +14,6 @@ angular.module("videogularApp")
 			var quiz = {};
 
 			for (var i in $scope.vgConfig.quizCollection) {
-				// 5. Cargar punto temporal de pausa
-				//				quiz = {
-				//					timeLapse: {
-				//						start: 10,
-				//						end: 10
-				//					},
-				//					params: {
-				//						index: 1,
-				//						id: 1,
-				//						question: '¿De qué color es el caballo blanco de Santiago?',
-				//						answers: [
-				//							{
-				//								id: 1,
-				//								text: 'Azul'
-				//					},
-				//							{
-				//								id: 2,
-				//								text: 'Rojo'
-				//					},
-				//							{
-				//								id: 3,
-				//								text: 'Blanco',
-				//								isCorrect: true
-				//					}
-				//			]
-				//					}
-				//				};
-
 				// 6. Asignar quizParams a quiz.params
 				var quiz = $scope.vgConfig.quizCollection[i];
 
