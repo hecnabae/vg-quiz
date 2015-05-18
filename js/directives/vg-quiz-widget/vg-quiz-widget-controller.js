@@ -13,42 +13,45 @@ angular.module("videogularApp")
 			var quizCollection = [];
 			var quiz = {};
 
-			// 5. Cargar punto temporal de pausa
-			quiz = {
-				timeLapse: {
-					start: 10,
-					end: 10
-				},
-				params: {
-					index: 1,
-					id: 1,
-					question: '¿De qué color es el caballo blanco de Santiago?',
-					answers: [
-						{
-							id: 1,
-							text: 'Azul'
-					},
-						{
-							id: 2,
-							text: 'Rojo'
-					},
-						{
-							id: 3,
-							text: 'Blanco',
-							isCorrect: true
-					}
-			]
-				}
-			};
+			for (var i in $scope.vgConfig.quizCollection) {
+				// 5. Cargar punto temporal de pausa
+				//				quiz = {
+				//					timeLapse: {
+				//						start: 10,
+				//						end: 10
+				//					},
+				//					params: {
+				//						index: 1,
+				//						id: 1,
+				//						question: '¿De qué color es el caballo blanco de Santiago?',
+				//						answers: [
+				//							{
+				//								id: 1,
+				//								text: 'Azul'
+				//					},
+				//							{
+				//								id: 2,
+				//								text: 'Rojo'
+				//					},
+				//							{
+				//								id: 3,
+				//								text: 'Blanco',
+				//								isCorrect: true
+				//					}
+				//			]
+				//					}
+				//				};
 
-			// 6. Asignar quizParams a quiz.params
+				// 6. Asignar quizParams a quiz.params
+				var quiz = $scope.vgConfig.quizCollection[i];
 
+				quiz.onLeave = this.onLeave.bind(this);
+				quiz.onUpdate = this.onUpdate.bind(this);
+				quiz.onComplete = this.onComplete.bind(this);
 
-			quiz.onLeave = this.onLeave.bind(this);
-			quiz.onUpdate = this.onUpdate.bind(this);
-			quiz.onComplete = this.onComplete.bind(this);
+				quizCollection.push(quiz);
+			}
 
-			quizCollection.push(quiz);
 
 			//TODO: Ver el ejemplo de Twitter. Ver https://github.com/2fdevs/videogular/blob/master/app/views/cue-points.html . Si nos fijamos en el ejemplo, definen la colección cuePoints en ctrl.config.cuePoints
 			this.config = {
