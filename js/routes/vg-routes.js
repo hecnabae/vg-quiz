@@ -1,5 +1,5 @@
 angular.module("quizApp", ["ngRoute"])
-	.config(function ($routeProvider, $locationProvider) {
+	.config(function ($routeProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/quiz-view.html',

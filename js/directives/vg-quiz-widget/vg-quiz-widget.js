@@ -1,6 +1,6 @@
 angular.module("quizApp")
 	.directive("vgQuizWidget",
-		function vgQuizPlugin() {
+		function vgQuizWidget() {
 			return {
 				scope: {
 					vgConfig: "="

@@ -19,18 +19,6 @@ angular.module("quizApp")
 			quizCollection: quizCol.data,
 			plugins: {
 				poster: "http://www.videogular.com/assets/images/videogular.png"
-					//			analytics: {
-					//				category: "Videogular",
-					//				label: "Quiz Widget",
-					//				events: {
-					//					ready: true,
-					//					play: true,
-					//					pause: true,
-					//					stop: true,
-					//					complete: true,
-					//					progress: 10
-					//				}
-					//}
 			}
 		};
 	}]);
