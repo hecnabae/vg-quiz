@@ -1,6 +1,6 @@
 'use strict';
-angular.module("videogularApp")
-	.controller("vgQuizWidgetController", ["$scope", "$sce", function ($scope, $sce) {
+angular.module("quizApp")
+	.controller("vgQuizWidgetController", ["$scope", function ($scope) {
 		$scope.API = null;
 		$scope.currentQuizParams = {};
 
@@ -14,8 +14,16 @@ angular.module("videogularApp")
 			var quiz = {};
 
 			for (var i in $scope.vgConfig.quizCollection) {
+				var q = $scope.vgConfig.quizCollection[i];
 				// 6. Asignar quizParams a quiz.params
-				var quiz = $scope.vgConfig.quizCollection[i];
+				var quiz = {}; //$scope.vgConfig.quizCollection[i];
+
+				quiz.timeLapse = {
+					start: q.start,
+					end: q.end
+				};
+
+				quiz.params = q.params;
 
 				quiz.onLeave = this.onLeave.bind(this);
 				quiz.onUpdate = this.onUpdate.bind(this);
@@ -28,27 +36,12 @@ angular.module("videogularApp")
 			//TODO: Ver el ejemplo de Twitter. Ver https://github.com/2fdevs/videogular/blob/master/app/views/cue-points.html . Si nos fijamos en el ejemplo, definen la colección cuePoints en ctrl.config.cuePoints
 			this.config = {
 				preload: "none",
-				sources: [
-					{
-						src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.mp4"),
-						type: "video/mp4"
-				},
-					{
-						src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"),
-						type: "video/webm"
-				},
-					{
-						src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"),
-						type: "video/ogg"
-				}
-				],
+				sources: $scope.vgConfig.sources,
 				cuePoints: {
 					quizCollection: quizCollection
 				},
 				theme: "http://www.videogular.com/styles/themes/default/latest/videogular.css",
-				plugins: {
-					poster: "http://www.videogular.com/assets/images/videogular.png"
-				}
+				plugins: $scope.vgConfig.plugins
 			};
 		};
 		this.onLeave = function onLeave(currentTime, timeLapse, params) {

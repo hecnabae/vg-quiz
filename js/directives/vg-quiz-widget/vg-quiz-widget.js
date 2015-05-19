@@ -1,4 +1,4 @@
-angular.module("videogularApp")
+angular.module("quizApp")
 	.directive("vgQuizWidget",
 		function vgQuizPlugin() {
 			return {

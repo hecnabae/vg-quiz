@@ -1,5 +1,5 @@
 'use strict';
-angular.module("videogularApp", [
+angular.module("quizApp", [
 			"ngSanitize",
 			"com.2fdevs.videogular",
 			"com.2fdevs.videogular.plugins.controls",
@@ -107,7 +107,7 @@ angular.module("videogularApp", [
 // TODO: OVERLAY - http://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
 //http://www.videogular.com/examples/poster-plugin/
 //http://www.videogular.com/tutorials/videogular-api/
-angular.module("videogularApp")
+angular.module("quizApp")
 	.directive("vgQuizPlugin",
 		function vgQuizPlugin() {
 			return {
