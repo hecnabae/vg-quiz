@@ -1,5 +1,4 @@
 // Load Libraries
-'use strict';
 angular.module("quizApp", [
 			"ngSanitize",
 			"ngRoute",

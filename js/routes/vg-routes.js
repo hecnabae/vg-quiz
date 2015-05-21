@@ -1,4 +1,4 @@
-angular.module("quizApp", ["ngRoute"])
+angular.module("quizApp")
 	.config(function ($routeProvider) {
 		$routeProvider
 			.when('/', {

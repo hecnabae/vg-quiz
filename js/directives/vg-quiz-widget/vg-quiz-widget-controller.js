@@ -1,6 +1,6 @@
 'use strict';
 angular.module("quizApp")
-	.controller("vgQuizWidgetController", ["$scope", function ($scope) {
+	.controller("vgQuizWidgetController", ["$scope", function vgQuizWidgetController($scope) {
 		$scope.API = null;
 		$scope.currentQuizParams = {};
 
