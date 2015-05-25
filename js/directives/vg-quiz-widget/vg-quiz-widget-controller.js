@@ -59,9 +59,13 @@ angular.module("quizApp")
 
 		};
 
-//		this.onResponse = function onResponse() {
-//			$scope.API.play();
-//		}
+		this.onResponse = function onResponse() {
+			$scope.API.play();
+		}
+
+		//		this.onResponse = function onResponse() {
+		//			$scope.API.play();
+		//		}
 
 
 		this.init();
