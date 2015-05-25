@@ -3,5 +3,6 @@
 	<div ng-repeat='pr in currentQuizParams.answers'>
 		<input type='checkbox'> {{pr.text}} </input>
 	</div>
+	<!-- TODO: onResponse() debe incluir la opcion seleccionada-->
 	<button type='button' ng-click='controller.onResponse()'>Responder</button>
 </div>
