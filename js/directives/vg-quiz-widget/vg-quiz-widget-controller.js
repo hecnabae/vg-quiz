@@ -58,6 +58,12 @@ angular.module("quizApp")
 			// TODO: Mostrar quizz
 
 		};
+
+//		this.onResponse = function onResponse() {
+//			$scope.API.play();
+//		}
+
+
 		this.init();
 
 
