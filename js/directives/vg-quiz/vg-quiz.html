@@ -1,8 +1,10 @@
 <div ng-show='API.currentState === "pause"'>
 	{{currentQuizParams.question}}
 	<div ng-repeat='pr in currentQuizParams.answers'>
-		<input type='checkbox'> {{pr.text}} </input>
+		<!-- TODO: Modifciar checkbox x radio -> https://docs.angularjs.org/api/ng/directive/ngValue -->
+		<!-- <input type='checkbox'> {{pr.text}} </input> -->
+		<input type='radio' id='{{pr.id}}' ng-value='pr' ng-model='$parent.answerSelected'>{{pr.text}}</input>
 	</div>
 	<!-- TODO: onResponse() debe incluir la opcion seleccionada-->
-	<button type='button' ng-click='controller.onResponse()'>Responder</button>
+	<button type='button' ng-click='controller.onResponse(answerSelected)'>Responder</button>
 </div>

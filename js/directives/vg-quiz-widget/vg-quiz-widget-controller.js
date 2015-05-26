@@ -4,6 +4,8 @@ angular.module("quizApp")
 		$scope.API = null;
 		$scope.currentQuizParams = {};
 
+		$scope.answerSelected = {};
+
 		this.onPlayerReady = function (API) {
 			$scope.API = API;
 		}
@@ -59,15 +61,11 @@ angular.module("quizApp")
 
 		};
 
-		this.onResponse = function onResponse() {
+		this.onResponse = function onResponse(answerSelected) {
 			$scope.API.play();
 			//TODO: Comprobar si la respuesta es correcta. Agregar al elemento quiz a qué minuto debe saltar (si debe hacerlo), cuando es correcto y que continue si es incorrecto.
+			alert(answerSelected);
 		}
-
-		//		this.onResponse = function onResponse() {
-		//			$scope.API.play();
-		//		}
-
 
 		this.init();
 
