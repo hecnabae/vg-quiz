@@ -64,7 +64,10 @@ angular.module("quizApp")
 		this.onResponse = function onResponse(answerSelected) {
 			$scope.API.play();
 			//TODO: Comprobar si la respuesta es correcta. Agregar al elemento quiz a qué minuto debe saltar (si debe hacerlo), cuando es correcto y que continue si es incorrecto.
-			alert(answerSelected);
+			if (typeof answerSelected.isCorrect === "undefined" || !answerSelected.isCorrect)
+				alert('Respuesta incorrecta!');
+			else
+				alert('Respuesta correcta!');
 		}
 
 		this.init();
