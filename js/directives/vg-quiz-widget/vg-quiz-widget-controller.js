@@ -21,8 +21,8 @@ angular.module("quizApp")
 				var quiz = {}; //$scope.vgConfig.quizCollection[i];
 
 				quiz.timeLapse = {
-					start: q.start,
-					end: q.end
+					start: q.time,
+					end: q.time
 				};
 
 				quiz.params = q.params;
