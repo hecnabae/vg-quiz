@@ -22,7 +22,7 @@ The quiz plugin accepts JSON data.  The JSON structure should be as:
 			...
 		]
 		}
-}
+	}
 ```
 
 
@@ -51,5 +51,5 @@ The quiz plugin accepts JSON data.  The JSON structure should be as:
 			}
 		]
 		}
-}
+	}
 ```
