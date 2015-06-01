@@ -3,7 +3,30 @@ Videogular quiz plugin
 
 ## How to use
 
-## Quiz Data Structure JSON
+## Data
+
+The quiz plugin accepts JSON data.  The JSON structure should be as: 
+```
+	{
+		"time": --(int) -> Second to pause the video and show quiz--,
+		"params": {
+			"index": --(int) -> Quiz index. Must match the order of quiz appearance.--,
+			"id": --(long) -> Quiz identificator--,
+			"question": --(string) -> Quiz question--,			
+			"answers": [
+				{
+					"id": --(int) -> Answer identificator. Should be unique--,
+					"text": --(string) -> Answer text--,
+					"isCorrect": --(boolean) -> Only if answer is correct --
+			},
+			...
+		]
+		}
+}
+```
+
+
+### Example
 
 ```
 	{
@@ -11,7 +34,7 @@ Videogular quiz plugin
 		"params": {
 			"index": 2,
 			"id": 2,
-			"question": "¿Quien fue elegido Presidente de España en el año 2011?",
+			"question": "Who was elected president of Spain in 2011?",
 			"answers": [
 				{
 					"id": 1,
