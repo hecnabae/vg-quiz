@@ -5,7 +5,7 @@ Videogular quiz plugin
 
 ## Quiz Data Structure JSON
 
-´´´
+```
 	{
 		"time": 18,
 		"params": {
@@ -29,4 +29,4 @@ Videogular quiz plugin
 		]
 		}
 }
-´´´
+```
