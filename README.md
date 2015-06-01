@@ -19,8 +19,7 @@ The quiz plugin accepts JSON data.  The JSON structure should be as:
 					"text": --(string) -> Answer text--,
 					"isCorrect": --(boolean) -> Only if answer is correct --
 			},
-			...
-		]
+			{...}]
 		}
 	}
 ```
@@ -40,16 +39,15 @@ The quiz plugin accepts JSON data.  The JSON structure should be as:
 					"id": 1,
 					"text": "Mariano Rajoy",
 					"isCorrect": true
-			},
+				},
 				{
 					"id": 2,
 					"text": "Zapatero"
-			},
+				},
 				{
 					"id": 3,
 					"text": "Pablo Iglesias"
-			}
-		]
+				}]
 		}
 	}
 ```
