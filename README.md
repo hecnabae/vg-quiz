@@ -3,7 +3,15 @@ Videogular quiz plugin
 
 ## How to use
 
-### 1 Add quiz directives to your source
+### 1.- Quiz plugin sources must be referenced
+
+```
+<script src="js/directives/vg-quiz/vg-quiz.js"></script>
+```
+
+### 2.- Add quiz directives to your source (<vg-quiz></vg-quiz>)
+
+Videogular documentation can be found at http://www.videogular.com
 
 ```
 <videogular vg-theme="controller.config.theme" vg-player-ready="controller.onPlayerReady($API)" vg-cue-points="controller.config.cuePoints" class="quizvideo-container">
