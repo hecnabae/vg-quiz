@@ -9,7 +9,7 @@ Videogular quiz plugin
 <script src="js/directives/vg-quiz/vg-quiz.js"></script>
 ```
 
-### 2.- Add quiz directives to your source (<vg-quiz></vg-quiz>)
+### 2.- Add quiz directives to your source 
 
 Videogular documentation can be found at http://www.videogular.com
 
