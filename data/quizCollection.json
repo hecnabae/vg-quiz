@@ -1,7 +1,6 @@
 [
 	{
-		"start": 10,
-		"end": 10,
+		"time": 10,
 		"params": {
 			"index": 1,
 			"id": 1,
@@ -24,8 +23,7 @@
 		}
 	},
 	{
-		"start": 18,
-		"end": 18,
+		"time": 18,
 		"params": {
 			"index": 2,
 			"id": 2,
