@@ -1,47 +1,9 @@
 # vg-quiz
-Videogular quiz plugin
+Quiz application developed with Videogular. Videogular documentation can be found at http://www.videogular.com
 
-## How to use
+## Input Data
 
-### 1.- Quiz plugin sources must be referenced
-
-```
-<script src="js/directives/vg-quiz/vg-quiz.js"></script>
-```
-
-### 2.- Add quiz directives to your source 
-
-Videogular documentation can be found at http://www.videogular.com
-
-```
-<videogular vg-theme="controller.config.theme" vg-player-ready="controller.onPlayerReady($API)" vg-cue-points="controller.config.cuePoints" class="quizvideo-container">
-	<vg-media vg-src="controller.config.sources">
-	</vg-media>
-
-
-	<vg-controls>
-		<vg-play-pause-button></vg-play-pause-button>
-		<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
-		<vg-scrub-bar>
-			<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-		</vg-scrub-bar>
-		<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
-		<vg-volume>
-			<vg-mute-button></vg-mute-button>
-			<vg-volume-bar></vg-volume-bar>
-		</vg-volume>
-		<vg-fullscreen-button></vg-fullscreen-button>
-	</vg-controls>
-
-	<vg-overlay-play></vg-overlay-play>
-	<vg-poster vg-url='controller.config.plugins.poster'></vg-poster>
-	<vg-quiz></vg-quiz>
-</videogular>
-```
-
-### 3.- 
-
-## Data
+The file 'data/quizCollection.json' contains quiz data.
 
 The quiz plugin accepts JSON data.  The JSON structure should be as: 
 ```
