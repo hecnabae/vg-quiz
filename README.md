@@ -51,3 +51,7 @@ The quiz plugin accepts JSON data.  The JSON structure should be as:
 		}
 	}
 ```
+
+## Styles
+
+quizz.css can be found at folder styles. 
